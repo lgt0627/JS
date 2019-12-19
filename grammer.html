@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+var person=function (name,age) {
+    this.name=name;
+    this.age=age;
+
+};
+var person1=new person("lgt",13);
+var person2=new person("gql",12);
+var person3=new person("ttt",14);
+var person4=new person("tt",10);
+var person5=new person("tt",15);
+var persons=[person1,person2,person3,person4,person5];
+
+function compare(arg) {
+    return function(a, b) {
+        return a[arg] - b[arg];
+    }
+}
+persons = persons.sort(compare('age'));
+
+for (var i = 0; i <persons.length ; i++) {
+
+    document.write("名字"+persons[i].name+"，年龄"+persons[i].age+"</br>");
+
+
+
+}
+</script>
+</body>
+</html>
